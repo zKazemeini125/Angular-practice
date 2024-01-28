@@ -1,0 +1,7 @@
+:host {
+    direction: rtl;
+}
+
+.container {
+    margin-top: 10px;
+}

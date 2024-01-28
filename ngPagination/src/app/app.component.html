@@ -1,0 +1,6 @@
+<h2 *appRepeater="3" [appClass]="{disabled: currentPage===0}">This is
+    header2</h2>
+<div>
+    <a class="box" *ngFor="let box of boxes; let i=index"
+        appBox="{{box.color}}">{{box.title}}</a><br>
+</div>

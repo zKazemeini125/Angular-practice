@@ -1,0 +1,51 @@
+<div class="container mt-6">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h3 class="title has-text-centered">Password Generator</h3>
+      <div class="GneratorType">
+        <div class="type"><input type="checkbox"></div>
+        <div class="type"><input type="checkbox"></div>
+      </div>
+      <div class="field">
+        <label>Length</label>
+        <br />
+        <input class="input" type="text" name="length" id="length"
+          (input)="getLength($any($event.target).value)">
+        <!-- *This works for me in ANGULAR HTML Component !! -->
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox" for="number">
+            <input type="checkbox" name="number" id="number"
+              (change)="onChangeNumber()">
+            include number</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox" for="letter">
+            <input type="checkbox" name="letter" id="letter"
+              (change)="onChangeLetter()">
+            include letter</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox" for="symbols">
+            <input type="checkbox" name="symbols" id="symbols"
+              (change)="onChangeSymbole()">
+            include symbols</label>
+        </div>
+      </div>
+      <button type="button" (click)="onClickGenerator()"
+        class="button is-link is-fullwidth"
+        [disabled]="!(length && (includeLetter|| includeNumber|| includeSymbole))">generator</button>
+      <div class="field mt-2" *ngIf="password">
+        <label>
+          Your Password</label>
+        <br />
+        <input class="input" type="text" [value]="password" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="formGroupExampleInput" class="form-label">name</label>
+      <input type="text" class="form-control" id="formGroupExampleInput"
+        (input)="setName($any($event.target).value)"
+        placeholder="Enter your name">
+    </div>
+    <div class="col">
+      <h5 class="form-label">your name</h5>
+      <label type="text" class="label">{{name | titlecase}}</label>
+    </div>
+  </div>
+</div>
